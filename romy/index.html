@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Romyyzh</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,700;1,700&display=swap" rel="stylesheet">
+</head>
+
+<!--Bootstrap-->
+<!-- Feather Icons -->
+<script src="https://unpkg.com/feather-icons"></script>
+
+<style>
+  /* Menghilangkan kursor default */
+  body {
+      cursor: none !important;
+  }
+
+  /* Kursor custom */
+  .custom-cursor {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: rgba(255, 100, 0, 0.8);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+  }
+
+  /* Efek api - partikel */
+  .custom-cursor::before, .custom-cursor::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 15px;
+      height: 15px;
+      background: rgba(255, 69, 0, 0.6);
+      border-radius: 50%;
+      animation: flicker 0.5s infinite ease-in-out;
+  }
+
+  .custom-cursor::after {
+      width: 30px;
+      height: 30px;
+      background: rgba(255, 140, 0, 0.4);
+      animation-duration: 0.7s;
+  }
+
+  /* Efek nyala api */
+  @keyframes flicker {
+      0% {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 0.8;
+      }
+      50% {
+          transform: translate(-50%, -50%) scale(1.5);
+          opacity: 0.3;
+      }
+      100% {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 0.8;
+      }
+  }
+
+  /* Menambahkan partikel api */
+  .fire-particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: rgba(255, 69, 0, 0.9);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: particle-fly 1s infinite ease-in-out;
+      z-index: 999;
+  }
+
+  /* Animasi partikel api */
+  @keyframes particle-fly {
+      0% {
+          transform: translate(0, 0);
+          opacity: 1;
+      }
+      100% {
+          transform: translate(10px, -100px);
+          opacity: 0;
+      }
+  }
+</style>
+</head>
+<body>
+
+<div class="custom-cursor" id="cursor"></div>
+
+<!-- Beberapa partikel api -->
+<div class="fire-particle" id="particle1"></div>
+<div class="fire-particle" id="particle2"></div>
+<div class="fire-particle" id="particle3"></div>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  const particles = document.querySelectorAll('.fire-particle');
+
+  document.addEventListener('mousemove', (e) => {
+      const x = e.pageX;
+      const y = e.pageY;
+      
+      // Update posisi kursor utama
+      cursor.style.left = x + 'px';
+      cursor.style.top = y + 'px';
+
+      // Update posisi partikel api
+      particles.forEach((particle, index) => {
+          particle.style.left = (x + Math.random() * 20 - 10) + 'px';
+          particle.style.top = (y + Math.random() * 20 - 10) + 'px';
+          particle.style.animationDelay = `${Math.random() * 0.5}s`;
+      });
+  });
+</script>
+
+</body>
+
+
+<!-- My style -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body> 
+  <!-- Navbar Start -->
+  <nav class="navbar">    
+    <a class="navbar-logo">Muhammad Alvin Ka<span>romy</span></a>
+    
+    
+    <div class="navbar-nav">
+      <a href="#home">Home</a>
+      <a href="#about">What About Me</a>
+      <a href="#albums">Albums</a>
+      <a href="#design">Design</a>
+      <a href="#contact">Contact</a>
+    </div>
+    
+    <div class="navbar-extra">
+     
+    </div>
+  </nav>
+  <!-- Navbar End -->
+
+  <!-- Hero Container Video -->
+   <section id="home" class="design">
+  <body>
+    <div class="container">
+
+        <video autoplay loop muted plays-inline class="background-clip">
+            <source src="video/km_20241016_1080p_60f_20241016_160516.mp4" type="video/mp4">
+        </video>
+
+        <div class="content3">
+            <h1>Romyyzh</h1>
+            <a href="#about">Me?</a>
+        </div>
+    </div>
+  </section>
+</body>
+  
+  
+  <!-- About Section Start -->
+<section id="about" class="about">
+    <h2>What About me? Hee Hee</h2>
+    
+    <div class="row">
+      <div class="about-img">
+        <img src="foto/DSC_0043.jpg" alt="Tentang Saya"
+        alt="tentang-saya">
+      </div>
+      <div class="content">
+        <h3>Hello I'm Romy</h3>
+        <p>I'm a student in Universitas Islam Nahdlatul Ulama. I'm a Dark Warrior but my skin is white. </p>
+      </div>
+   
+</section>
+  
+  <!-- About Section End -->
+ <!--===== Foto  =  ====-->
+ 
+ <section id="albums" class="design">
+  <h2>Albums</h2>
+
+ <body>
+  <div class="wrapper">
+    <img src="foto/IMG20211208154353.jpg" />
+    <img src="foto/IMG-20240411-WA0009.jpg" />
+    <img src="foto/IMG-20220504-WA0003(1).jpg" />
+      <img src="foto/IMG20211219154158.jpg" />
+      <img src="foto/DSCF5840(1).jpg" />
+      <img src="foto/IMG_20240406_210330_212.jpg" />
+  </div>
+  </section>
+</body>
+
+  <section id="design" class="design">
+    <h2>Pictures Full of Handsome Boy</h2>
+   
+    
+    <div class="features"> 
+        <div class="card">
+                
+         <div class="foto1"> </div>
+          </div>
+        <div class="card">
+            
+            <div class="foto2"> 
+          </div>
+        </div>
+        <div class="card">
+          <div class="foto3"> 
+          </div>          
+        </div>
+        <div class="card">
+        
+            <div class="foto4">              
+            </div>
+        </div>
+          </div>
+  
+</section>
+
+<body>
+  <div class="biji">
+      <div class="earth"></div>
+      <div class="moon"></div>
+      <!-- Generate more random stars if you want-->
+      <div class="star" style="top: 10%; left: 20%;"></div>
+      <div class="star" style="top: 40%; left: 70%;"></div>
+      <div class="star" style="top: 60%; left: 30%;"></div>
+      <div class="star" style="top: 80%; left: 80%;"></div>
+  </div>
+</body>
+
+<!-- Footer -->
+<section id="contact" class="contact">
+  <body>
+    <footer class="footer">
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+      <ul class="social-icon">
+        <li class="social-icon__item"><a class="social-icon__link" href="https://www.facebook.com/romy.gaming.14">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="https://wa.me/62895326544080/">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="https://instagram.com/romyyzh_?igshid=OGQ5ZDc2ODk2ZA==">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a></li>
+      </ul>
+      <ul class="menu">
+        <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+  
+      </ul>
+      <p>&copy;2024 Romy Corporation | All Rights Reserved</p>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</section>
+
+</body>
+</html>
